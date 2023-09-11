@@ -10,6 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>import ComposableArchitecture
+import SwiftUI
 
 struct &lt;# Name #&gt;Feature: Reducer {
     struct State: Equatable {
