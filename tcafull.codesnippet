@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tcafull</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import ComposableArchitecture
+
+struct &lt;# Name #&gt;Feature: Reducer {
+    struct State: Equatable {
+        var count = 0
+    }
+
+    enum Action: Equatable {
+        case count(Int)
+    }
+
+    var body: some ReducerOf&lt;Self&gt; {
+        Reduce { state, action in
+            switch action {
+            case let .count(count):
+                state.count = count
+                return .none
+            }
+        }
+    }
+}
+
+struct &lt;# Name #&gt;View: View {
+    let store: StoreOf&lt;&lt;# Name #&gt;Feature&gt;
+
+    struct ViewState: Equatable {
+        let count: Int
+        init(state: &lt;# Name #&gt;Feature.State) {
+            count = state.count
+        }
+    }
+
+    var body: some View {
+        WithViewStore(store, observe: ViewState.init) { viewStore in
+            Text("count \(viewStore.count)")
+        }
+    }
+}
+
+#Preview {
+    &lt;# Name #&gt;View(
+        store: Store(initialState: &lt;# Name #&gt;Feature.State()) {
+            &lt;# Name #&gt;Feature()
+        }
+    )
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D5A12A25-A8FC-4E48-87C8-DD380DECD466</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>TCA Reducer and View</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

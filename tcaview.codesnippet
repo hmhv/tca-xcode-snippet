@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tcaview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>struct &lt;# Name #&gt;View: View {
+    let store: StoreOf&lt;&lt;# Name #&gt;Feature&gt;
+
+    struct ViewState: Equatable {
+        let count: Int
+        init(state: &lt;# Name #&gt;Feature.State) {
+            count = state.count
+        }
+    }
+
+    var body: some View {
+        WithViewStore(store, observe: ViewState.init) { viewStore in
+            Text("count \(viewStore.count)")
+        }
+    }
+}
+
+#Preview {
+    &lt;# Name #&gt;View(
+        store: Store(initialState: &lt;# Name #&gt;Feature.State()) {
+            &lt;# Name #&gt;Feature()
+        }
+    )
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E659D426-9189-4E36-99FA-5EEE65DD919F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>TCA View</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
