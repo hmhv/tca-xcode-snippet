@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>struct &lt;# Name #&gt;: Reducer {
+	<string>struct &lt;# Name #&gt;Feature: Reducer {
     struct State: Equatable {
         var count = 0
     }
