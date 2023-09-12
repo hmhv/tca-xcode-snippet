@@ -8,7 +8,7 @@
 ### 1. Copy all codesnippets to CodeSnippets Folder or Use script below.
 ```sh
 git clone https://github.com/hmhv/tca-xcode-snippet.git
-cp tca-xcode-snippet/*.codesnippet ~/Library/Developer/Xcode/UserData/CodeSnippets
+mkdir -p ~/Library/Developer/Xcode/UserData/CodeSnippets && cp tca-xcode-snippet/*.codesnippet $_
 rm -rf tca-xcode-snippet
 ```
 
